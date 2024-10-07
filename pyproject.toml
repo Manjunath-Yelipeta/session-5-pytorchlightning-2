@@ -1,0 +1,22 @@
+[project]
+name = "dog-classifier-pl"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "black>=24.8.0",
+    "gdown>=5.2.0",
+    "lightning[extra]>=2.4.0",
+    "loguru>=0.7.2",
+    "rich>=13.8.1",
+    "tensorboard>=2.18.0",
+    "rootutils>=1.0.7",
+    "timm>=1.0.9",
+    "torch==2.4.1+cpu",
+    "torchvision==0.19.1+cpu",
+    "torchviz>=0.0.2",
+    "scikit-learn",
+    "scipy",
+    "matplotlib",
+]
