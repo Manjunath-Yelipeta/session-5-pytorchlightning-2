@@ -8,6 +8,6 @@ jobs:
       - uses: actions/checkout@v3
       - name: Build and push the image
         run : |
-          docker login --username Sudhakardlal  --password-stdin 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 ghcr.io
+          docker login --username Sudhakardlal  --password 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 ghcr.io
           docker build . --tag ghcr.io/dogclassifier/actions-runner-controller:latest
           docker push ghcr.io/dogclassifier/actions-runner-controller:latest
