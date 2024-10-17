@@ -91,7 +91,7 @@ jobs:
 
       - name: Train and test model
         run: |
-          docker run --rm -v ${{ github.workspace }}:/workspace ghcr.io/${{ env.REPO_LOWERCASE }}:main \
+          docker run --rm --shm-size=2g -v ${{ github.workspace }}:/workspace ghcr.io/${{ env.REPO_LOWERCASE }}:main \
           python /workspace/src/train.py \
           data=dog \
           model=timm_classify \
@@ -100,6 +100,7 @@ jobs:
           trainer.max_epochs=5 \
           trainer.accelerator=cpu \
           trainer.devices=1 \
+          data.batch_size=8 \
           test=True \
           > training_output.txt
 
