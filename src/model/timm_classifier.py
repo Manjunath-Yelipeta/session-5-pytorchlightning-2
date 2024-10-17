@@ -56,7 +56,7 @@ class TimmClassifier(L.LightningModule):
         preds = F.softmax(logits, dim=1)
         self.test_acc(preds, y)
         self.log("test_loss", loss, prog_bar=True)
-        self.log("test_acc", self.test_acc, prog_bar=True)
+        self.log("test/acc", self.test_acc, prog_bar=True)  # Changed from "test_acc" to "test/acc"
 
     def configure_optimizers(self):
         optimizer = torch.optim.Adam(
