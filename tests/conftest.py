@@ -18,3 +18,9 @@ def train_config():
     with initialize(config_path="../config"):
         cfg = compose(config_name="train")
     return cfg
+
+@pytest.fixture
+def eval_config():
+    with initialize(config_path="../config"):
+        cfg = compose(config_name="eval")
+    return cfg

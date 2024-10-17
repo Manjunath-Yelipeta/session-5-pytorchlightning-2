@@ -107,6 +107,9 @@ def main(cfg: DictConfig):
             trainer.test(model=model, datamodule=datamodule)
         logger.info("Testing completed!")
         logger.info(f"Test metrics:\n{trainer.callback_metrics}")
+        
+        # Add this line to print the accuracy in a easily parsable format
+        print(f"Test accuracy: {trainer.callback_metrics['test/acc']:.4f}")
 
     # Make sure everything closed properly
     logger.info("Finalizing!")
